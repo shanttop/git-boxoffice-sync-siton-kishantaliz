@@ -2,6 +2,7 @@ function isValidQuantity(quantity) {
   return quantity > 0 && quantity <= 20;
 }
 
+
 function calculateTicketPrice(quantity, basePrice, isVip = false) {
   let total = quantity * basePrice;
   if (quantity >= 5) {
@@ -10,7 +11,8 @@ function calculateTicketPrice(quantity, basePrice, isVip = false) {
   if (isVip) {
     total = total * 1.5; // Apply a 50% surcharge for VIP tickets
   }
-  return Math.floor(total);
+  return Math.round(total);
+
 }
 
 module.exports = { isValidQuantity, calculateTicketPrice };
